@@ -27,7 +27,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 @RequestMapping("/country")
 public class CountryController {
 
-    @Autowired
+    @Autowired     
     private CountryService service;
 
     @PostMapping
@@ -47,8 +47,9 @@ public class CountryController {
 		return service.fetchCountryById(id);
 	}
 	
-	@DeleteMapping("/{id}")
+	@DeleteMapping("delete/{id}")
 	public void deleteCountryById(@PathVariable("id") Long id) {
+		System.out.println("Controller delete mapping");
 		 service.removeCountryById(id);
     }
     

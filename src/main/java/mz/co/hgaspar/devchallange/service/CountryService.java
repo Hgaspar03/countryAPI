@@ -63,7 +63,9 @@ public class CountryService {
 
     public Country updateCountry(Country country) {
 
-        return repository.save(country);
+         repository.deleteById(country.getId());
+
+         return repository.save(country);
 
     }
 
